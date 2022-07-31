@@ -89,9 +89,13 @@ else
 app.get('/', index);
 app.get('/rss.xml', rss);
 
+const open = require("open");
+
 // mount the api
 app.use('/api', require('./api')(app, config, findCountry));
-
+var host = process.env.HOST || "localhost";
+var port = app.get('port');
 app.listen(app.get('port'), function() {
   console.log("Express %s server listening on port %s", app.get('env'), app.get('port'));
+  open("http://" + host + ":" + port + "/", { app: "chrome" });
 });

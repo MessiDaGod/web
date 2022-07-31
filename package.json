@@ -27,6 +27,7 @@
     "express": "^4.16.4",
     "geoip-lite": "*",
     "moment-timezone": "*",
+    "open": "^8.4.0",
     "optimist": "*",
     "serve-favicon": "^2.5.0"
   }
